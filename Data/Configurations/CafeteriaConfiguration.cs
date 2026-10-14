@@ -10,8 +10,8 @@ public class CafeteriaConfiguration : IEntityTypeConfiguration<Cafeteria>
     {
         builder.HasKey(c => c.Id);
 
-        builder.Property(c => c.City).HasMaxLength(100).IsRequired();
-        builder.Property(c => c.Address).HasMaxLength(255).IsRequired();
+        builder.Property(c => c.City).HasMaxLength(Cafeteria.CityMaxLength).IsRequired();
+        builder.Property(c => c.Address).HasMaxLength(Cafeteria.AddressMaxLength).IsRequired();
         builder.Property(c => c.CreatedAt).HasDefaultValueSql("now()");
 
         // Mesmo endereço pode existir em cidades diferentes.

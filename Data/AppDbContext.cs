@@ -8,6 +8,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<Admin> Admins => Set<Admin>();
     public DbSet<Cafeteria> Cafeterias => Set<Cafeteria>();
     public DbSet<Manager> Managers => Set<Manager>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<Order> Orders => Set<Order>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

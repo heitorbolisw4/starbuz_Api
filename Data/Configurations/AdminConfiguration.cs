@@ -10,8 +10,8 @@ public class AdminConfiguration : IEntityTypeConfiguration<Admin>
     {
         builder.HasKey(a => a.Id);
 
-        builder.Property(a => a.Name).HasMaxLength(50).IsRequired();
-        builder.Property(a => a.Email).HasMaxLength(254).IsRequired();
+        builder.Property(a => a.Name).HasMaxLength(Admin.NameMaxLength).IsRequired();
+        builder.Property(a => a.Email).HasMaxLength(Admin.EmailMaxLength).IsRequired();
         builder.HasIndex(a => a.Email).IsUnique();
 
         // Ref: Admin.CafeteriaId - Cafeteria.Id [delete: cascade]
